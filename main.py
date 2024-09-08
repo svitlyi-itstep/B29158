@@ -7,12 +7,14 @@ while True:
         print('Ви ввели:', a)
         break
 
-age = input('Введіть свій вік: ')
+while True:
+    age = input('Введіть свій вік: ')
 
-if not age:
-    print('Ви нічого не ввели!')
-else:
-    if int(age) < 18:
-        print('Неповнолітній')
+    if not age:
+        print('Ви нічого не ввели!')
     else:
-        print('Повнолітній')
+        if int(age) < 18:
+            print('Неповнолітній')
+        else:
+            print('Повнолітній')
+        break
