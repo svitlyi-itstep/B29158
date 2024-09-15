@@ -18,3 +18,6 @@ while True:
         else:
             print('Повнолітній')
         break
+
+
+print("HELLO WORLD!")
