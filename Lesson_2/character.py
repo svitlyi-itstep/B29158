@@ -1,8 +1,11 @@
+import random
+
 class Character:
     name = ''
     health = 100
     damage = 1
     defence = 0
+    damage_offset = 0.2
 
     def __init__(self, name, health, damage, defence):
         self.name = name
@@ -20,9 +23,10 @@ class Character:
                f' Захист: {self.defence}\n'
 
     def take_damage(self, damage):
-        real_damage = round(damage * ((100 - self.defence) / 100), 2)
+        real_damage = round(max(damage * ((100 - self.defence) / 100), 0), 2)
         self.health = round(max(self.health - real_damage, 0), 2)
         return real_damage
 
     def attack(self, target):
-        return target.take_damage(self.damage)
+        offset = random.randint(0, int(self.damage * self.damage_offset)) * random.choice((-1, 1))
+        return target.take_damage(self.damage + offset)
