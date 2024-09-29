@@ -24,10 +24,3 @@ while player1.health > 0 and player2.health > 0:
     print(attack_message(player2, player1, damage_done))
 
     print(f'{player1}\n{player2}')
-
-'''
-
-    Змінити метод take_damage класу Character таким чином, щоб при захисту більше 100
-    шкода не падала нижче нуля. В такому випадку вона має дорівнювати нулю.
-
-'''
